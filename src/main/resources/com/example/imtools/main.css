@@ -1,7 +1,7 @@
 .button {
     -fx-background-color: transparent;
-    -fx-background-radius: 20px;
-    -fx-border-radius: 20px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
     -fx-border-color: #2196f3; /* Material-UI blue color */
     -fx-border-width: 1px;
     -fx-text-fill: #2196f3;
@@ -16,3 +16,12 @@
     -fx-text-fill: #0d47a1; /* Dark blue text color */
 }
 
+#backButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+}
+
+#appBar {
+    -fx-background-color: #e3f2fd;
+
+}

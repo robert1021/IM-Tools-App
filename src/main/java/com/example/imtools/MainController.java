@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -20,8 +22,9 @@ public class MainController {
     private Scene scene;
     private FXMLLoader fxmlLoader;
 
-
-
+    @FXML
+    Button backButton;
+    // Root view
     @FXML
     Button parsePdfToNpnButton;
     @FXML
@@ -31,7 +34,11 @@ public class MainController {
     @FXML
     Button cmsUploadMapBuilderButton;
 
-    public void test() {System.out.println("testing");}
+    // Parse PDF NPN View
+    @FXML
+    TextField pdfPath;
+    @FXML
+    Pane appBar;
 
     public void switchToRootScene(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-view.fxml"));
@@ -46,6 +53,7 @@ public class MainController {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("parse-pdf-npn-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("main.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -54,6 +62,7 @@ public class MainController {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("npn-submission-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("main.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -62,6 +71,7 @@ public class MainController {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("cms-post-licence-uploader-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("main.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -70,6 +80,7 @@ public class MainController {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("cms-upload-map-builder-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("main.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
